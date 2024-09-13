@@ -40,7 +40,7 @@ if askyear.startswith('y'):
 elif askyear == "":
     year = datetime.datetime.now().year
 else:
-   year = int(input("What year did you start?"))
+   year = int(input("What year did you start? "))
 
 start = datetime.datetime(year, month, day)
 
@@ -48,7 +48,10 @@ timedif = today - start
 dayssince = timedif.days
 weekssince = round((dayssince / 7), 2) 
 monthssince = round((dayssince / 30.5), 2) 
+yearssince = round((monthssince / 12), 2)
 
 print(f"\nDays since start: ",dayssince)
 print(f"Weeks since start: ", weekssince)
 print(f"Months since start: ", monthssince)
+if yearssince > 1 :
+    print("Years since start: ", yearssince)
